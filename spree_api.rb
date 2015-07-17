@@ -22,7 +22,7 @@ class SpreeApi
   def SpreeApi.create_product_image(product_id, params)
     JSON.parse(
       RestClient.post( 
-        "#{@host}/api/products/#{ product_id }/?token=#{ ENV['SPREE_API_KEY'] }", 
+        "#{@host}/api/products/#{ product_id }/images?token=#{ ENV['SPREE_API_KEY'] }", 
         params
       )
     )
@@ -32,12 +32,23 @@ end
 
 product_params = {
   :product => {
-    :name => 'Catphones',
+    :name => 'Cat Picture',
     :shipping_category_id => 1,
     :price => 100
   }
 }
 
-p SpreeApi.create_product(product_params)
+product = SpreeApi.create_product(product_params)
 
+attachment = File.new("./cat.jpg", 'rb')
+
+picture_params = {
+  :image => {
+    attachment: attachment
+  }
+}
+
+product_image = SpreeApi.create_product_image(product["id"], picture_params)
+
+p product_image
 
