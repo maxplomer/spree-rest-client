@@ -2,7 +2,8 @@ class SpreeApi
   require 'rest-client'
   require 'json'
 
-  @host = 'localhost:3000'
+  # @host = 'localhost:3000'
+  @host = 'spree-sandbox-gramercy.herokuapp.com'
 
   def SpreeApi.list_products
     JSON.parse(
