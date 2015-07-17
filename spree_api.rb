@@ -29,6 +29,15 @@ class SpreeApi
     )
   end
 
+  def SpreeApi.create_product_digital(product_id, params)
+    JSON.parse(
+      RestClient.post( 
+        "#{@host}/api/products/#{ product_id }/digitals?token=#{ ENV['SPREE_API_KEY'] }", 
+        params
+      )
+    )
+  end
+
 end
 
 product_params = {
@@ -41,6 +50,8 @@ product_params = {
 
 product = SpreeApi.create_product(product_params)
 
+p product
+
 attachment = File.new("./cat.jpg", 'rb')
 
 picture_params = {
@@ -52,4 +63,19 @@ picture_params = {
 product_image = SpreeApi.create_product_image(product["id"], picture_params)
 
 p product_image
+
+attachment = File.new("./cat.pdf", 'rb')
+
+digital_params = {
+  :digital_version => {
+    attachment: attachment
+  }
+}
+
+product_digital = SpreeApi.create_product_digital(product["id"], digital_params)
+
+p product_digital
+
+#In api controller for digitals will have to call something similar to:
+#Spree::Digital.new(attachment: attachment).save
 
