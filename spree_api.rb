@@ -10,18 +10,26 @@ class SpreeApi
     )
   end
 
-  def SpreeApi.create_product
+  def SpreeApi.create_product(params)
     JSON.parse(
       RestClient.post( 
-        "#{@host}/api/products?token=#{ ENV['SPREE_API_KEY'] }",
-        :product => { :name => 'Second Cat Picture' }
+        "#{@host}/api/products?token=#{ ENV['SPREE_API_KEY'] }", 
+        params
       )
     )
   end
 
 end
 
-p SpreeApi.create_product
+params = {
+  :product => {
+    :name => 'Catphones',
+    :shipping_category_id => 1,
+    :price => 100
+  }
+}
+
+p SpreeApi.create_product(params)
 
 
 
