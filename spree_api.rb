@@ -19,6 +19,15 @@ class SpreeApi
     )
   end
 
+  def SpreeApi.create_product_image(product_id, params)
+    JSON.parse(
+      RestClient.post( 
+        "#{@host}/api/products/#{ product_id }/?token=#{ ENV['SPREE_API_KEY'] }", 
+        params
+      )
+    )
+  end
+
 end
 
 params = {
@@ -32,5 +41,3 @@ params = {
 p SpreeApi.create_product(params)
 
 
-
-# do i have to send the api key every time? 
