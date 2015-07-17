@@ -30,7 +30,7 @@ class SpreeApi
 
 end
 
-params = {
+product_params = {
   :product => {
     :name => 'Catphones',
     :shipping_category_id => 1,
@@ -38,6 +38,6 @@ params = {
   }
 }
 
-p SpreeApi.create_product(params)
+p SpreeApi.create_product(product_params)
 
 
