@@ -1,4 +1,7 @@
 require_relative 'spree_api'
+require 'dotenv'
+
+Dotenv.load
 
 spree_api = SpreeApi.new('localhost:3000')
 
