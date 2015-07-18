@@ -2,8 +2,8 @@ class SpreeApi
   require 'rest-client'
   require 'json'
 
-  # @host = 'localhost:3000'
-  @host = 'spree-sandbox-gramercy.herokuapp.com'
+  @host = 'localhost:3000'
+  # @host = 'spree-sandbox-gramercy.herokuapp.com'
 
   def SpreeApi.list_products
     JSON.parse(
@@ -68,7 +68,7 @@ attachment = File.new("./cat.pdf", 'rb')
 
 digital_params = {
   :digital_version => {
-    attachment: attachment
+    :attachment => attachment
   }
 }
 
