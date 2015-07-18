@@ -45,6 +45,21 @@ order_params = {
   :email => "maxplomer@gmail.com"
 }
 
-new_order = spree_api.create_new_order(order_params)
+order = spree_api.create_new_order(order_params)
 
-p new_order
+p order
+
+item_params = {
+  :line_item => {
+    :variant_id => product["id"],
+    :quantity => 5
+  }
+}
+
+new_item = spree_ape.add_line_item(order["id"], item_params)
+
+p new_item
+
+
+
+
