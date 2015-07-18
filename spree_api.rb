@@ -56,6 +56,14 @@ class SpreeApi
       )
     )
   end
+
+  def show_order(order_number)
+    JSON.parse(
+      RestClient.get(
+        "#{@host}/api/orders/#{ order_number }?token=#{ ENV['SPREE_API_KEY'] }"
+      )
+    )
+  end
 end
 
 

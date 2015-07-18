@@ -15,6 +15,7 @@ product_params = {
 
 product = spree_api.create_product(product_params)
 
+puts "\n\n\n\n\n"
 p product
 
 attachment = File.new("./cat.jpg", 'rb')
@@ -27,6 +28,7 @@ picture_params = {
 
 product_image = spree_api.create_product_image(product["id"], picture_params)
 
+puts "\n\n\n\n\n"
 p product_image
 
 attachment = File.new("./cat.pdf", 'rb')
@@ -39,10 +41,12 @@ digital_params = {
 
 product_digital = spree_api.create_product_digital(product["id"], digital_params)
 
+puts "\n\n\n\n\n"
 p product_digital
 
 order = spree_api.create_new_order
 
+puts "\n\n\n\n\n"
 p order
 
 item_params = {
@@ -54,7 +58,13 @@ item_params = {
 
 new_item = spree_api.add_line_item(order["number"], item_params)
 
+puts "\n\n\n\n\n"
 p new_item
+
+order = spree_api.show_order(order["id"])
+
+puts "\n\n\n\n\n"
+p order
 
 # should be able to go to order url, but missing info
 # http://localhost:3000/orders/R637194959
