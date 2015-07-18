@@ -56,7 +56,7 @@ attachment = File.new("./cat.jpg", 'rb')
 
 picture_params = {
   :image => {
-    attachment: attachment
+    :attachment => attachment
   }
 }
 
