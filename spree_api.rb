@@ -67,7 +67,7 @@ p product_image
 attachment = File.new("./cat.pdf", 'rb')
 
 digital_params = {
-  :digital_version => {
+  :digital => {
     :attachment => attachment
   }
 }
