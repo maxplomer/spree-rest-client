@@ -75,7 +75,3 @@ digital_params = {
 product_digital = SpreeApi.create_product_digital(product["id"], digital_params)
 
 p product_digital
-
-#In api controller for digitals will have to call something similar to:
-#Spree::Digital.new(attachment: attachment).save
-
