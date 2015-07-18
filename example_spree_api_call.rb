@@ -66,10 +66,10 @@ order = spree_api.show_order(order["id"])
 puts "\n\n\n\n\n"
 p order
 
-order_transition = spree_api.transition_order(order["number"])
+# order_transition = spree_api.transition_order(order["number"])
 
-puts "\n\n\n\n\n"
-p order_transition
+# puts "\n\n\n\n\n"
+# p order_transition
 
 
 # redirect user to http://localhost:3000/checkout/{{ order_number }}
