@@ -57,10 +57,19 @@ class SpreeApi
     )
   end
 
-  def show_order(order_number)
+  def show_order(order_id)
     JSON.parse(
       RestClient.get(
-        "#{@host}/api/orders/#{ order_number }?token=#{ ENV['SPREE_API_KEY'] }"
+        "#{@host}/api/orders/#{ order_id }?token=#{ ENV['SPREE_API_KEY'] }"
+      )
+    )
+  end
+
+  def transition_order(order_number)
+    JSON.parse(
+      RestClient.put(
+        "#{@host}/api/checkouts/#{ order_number }/next?token=#{ ENV['SPREE_API_KEY'] }",
+        {}
       )
     )
   end

@@ -66,8 +66,17 @@ order = spree_api.show_order(order["id"])
 puts "\n\n\n\n\n"
 p order
 
+order_transition = spree_api.transition_order(order["number"])
+
+puts "\n\n\n\n\n"
+p order_transition
+
+
+# redirect user to http://localhost:3000/checkout/{{ order_number }}
+# I'm logged in, can i do as guest?
+
 # should be able to go to order url, but missing info
-# http://localhost:3000/orders/R637194959
+# http://localhost:3000/orders/{{ order_number }}
 
 
 
