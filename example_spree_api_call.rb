@@ -41,11 +41,7 @@ product_digital = spree_api.create_product_digital(product["id"], digital_params
 
 p product_digital
 
-order_params = {
-  :email => "maxplomer@gmail.com"
-}
-
-order = spree_api.create_new_order(order_params)
+order = spree_api.create_new_order
 
 p order
 
