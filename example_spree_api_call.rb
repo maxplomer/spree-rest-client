@@ -71,11 +71,13 @@ p order
 # puts "\n\n\n\n\n"
 # p order_transition
 
-order_params = {
-  :order_token => "abcdef123456"
-}
 
-order_update = spree_api.update_order(order["id"], order_params)
+#####this doesn't work######
+# order_params = {
+#   :order_token => "abcdef123456"
+# }
+
+# order_update = spree_api.update_order(order["id"], order_params)
 
 
 
