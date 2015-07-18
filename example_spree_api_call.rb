@@ -60,6 +60,9 @@ new_item = spree_api.add_line_item(order["number"], item_params)
 
 p new_item
 
+# should be able to go to order url, but missing info
+# http://localhost:3000/orders/R637194959
+
 
 
 
