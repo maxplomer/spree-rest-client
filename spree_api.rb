@@ -48,10 +48,10 @@ class SpreeApi
     )
   end
 
-  def add_line_item(order_id, params)
+  def add_line_item(order_number, params)
     JSON.parse(
       RestClient.post( 
-        "#{@host}/api/orders/#{ order_id }/line_items?token=#{ ENV['SPREE_API_KEY'] }", 
+        "#{@host}/api/orders/#{ order_number }/line_items?token=#{ ENV['SPREE_API_KEY'] }", 
         params
       )
     )

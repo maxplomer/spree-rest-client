@@ -56,7 +56,7 @@ item_params = {
   }
 }
 
-new_item = spree_api.add_line_item(order["id"], item_params)
+new_item = spree_api.add_line_item(order["number"], item_params)
 
 p new_item
 
