@@ -66,6 +66,7 @@ order = spree_api.show_order(order["id"])
 puts "\n\n\n\n\n"
 p order
 
+#####this works but is not currently useful######
 # order_transition = spree_api.transition_order(order["number"])
 
 # puts "\n\n\n\n\n"
@@ -81,13 +82,13 @@ p order
 
 
 
+# what happens when redirect to
 
-# redirect user to http://localhost:3000/checkout/{{ order_number }}
-# I'm logged in, can i do as guest? not at the moment
+# to http://localhost:3000/checkout/{{ order_number }}
 
-# should be able to go to order url, but missing info
+# or
+
 # http://localhost:3000/orders/{{ order_number }}
-
-
+# (gives missing info error)
 
 
