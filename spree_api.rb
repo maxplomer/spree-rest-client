@@ -73,6 +73,15 @@ class SpreeApi
       )
     )
   end
+
+  def update_order(order_id, params)
+    JSON.parse(
+      RestClient.put(
+        "#{@host}/api/orders/#{ order_id }?token=#{ ENV['SPREE_API_KEY'] }",
+        params
+      )
+    )
+  end
 end
 
 

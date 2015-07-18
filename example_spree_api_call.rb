@@ -71,9 +71,17 @@ p order
 # puts "\n\n\n\n\n"
 # p order_transition
 
+order_params = {
+  :order_token => "abcdef123456"
+}
+
+order_update = spree_api.update_order(order["id"], order_params)
+
+
+
 
 # redirect user to http://localhost:3000/checkout/{{ order_number }}
-# I'm logged in, can i do as guest?
+# I'm logged in, can i do as guest? not at the moment
 
 # should be able to go to order url, but missing info
 # http://localhost:3000/orders/{{ order_number }}
