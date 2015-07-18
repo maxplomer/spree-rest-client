@@ -39,9 +39,12 @@ class SpreeApi
     )
   end
 
-  def create_new_order
+  def create_new_order(params)
     JSON.parse(
-      RestClient.post("#{@host}/api/orders?token=#{ ENV['SPREE_API_KEY'] }", {})
+      RestClient.post(
+        "#{@host}/api/orders?token=#{ ENV['SPREE_API_KEY'] }",
+        params
+      )
     )
   end
 end
